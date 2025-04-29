@@ -2,11 +2,155 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#2196f3">
     <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/19f80c203e.js" crossorigin="anonymous"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="largo.jpg" as="image">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style">
+    
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+    
     <style>
+        /* Estilos base para móviles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            color: #ffffff;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Ajustes para imágenes en móviles */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .hero-img-pro {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        /* Ajustes para iconos en móviles */
+        .social-links a i,
+        .skill-card i {
+            font-size: 2rem;
+            color: #2196f3;
+        }
+        
+        /* Ajustes para botones en móviles */
+        .btn, .contact-btn, .about-btn-hero {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        
+        /* Ajustes para el menú en móviles */
+        .menu-toggle {
+            display: block;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 26, 46, 0.95);
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Estilos base críticos */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            color: #ffffff;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
         .theme-toggle-btn {
             position: fixed;
             bottom: 2rem;
@@ -113,16 +257,18 @@
             }
         });
     </script>
+    <script>
+        function copyEmail() {
+            const email = 'santoandrerita77@hotmail.com';
+            navigator.clipboard.writeText(email);
+        }
+    </script>
     <header>
         <nav id="navbar">
             <div class="container nav-container">
-                <div class="logo rain-logo">Rita<span>Santoandre
-                    <span class="drop drop1"></span>
-                    <span class="drop drop2"></span>
-                    <span class="drop drop3"></span>
-                    <span class="drop drop4"></span>
-                    <span class="drop drop5"></span>
-                </span></div>
+                <div class="logo">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
                 <div class="menu-toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -142,13 +288,19 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <span class="welcome-text">¡Hola! 👋 Soy</span>
+                    <h1 class="shine-name">Rita Santoandre
+                        <span class="drop drop1"></span>
+                        <span class="drop drop2"></span>
+                        <span class="drop drop3"></span>
+                        <span class="drop drop4"></span>
+                        <span class="drop drop5"></span>
+                    </h1>
                     <h2 class="typewriter">Desarrolladora Web Junior</h2>
-                    <p class="hero-description">"Construyendo una base sólida, una línea de código a la vez, mientras exploro nuevas tecnologías y habilidades para perfeccionar mi dominio técnico."</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/rita-vanessa-santoandre-913b871ab/" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/Rita190807" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
-                        <a href="CV-ADJ" download class="cv-social-btn" title="Descargar CV">
-                            <i class="fas fa-file-alt"></i>
+                        <a href="https://www.linkedin.com/in/rita-vanessa-santoandre-913b871ab/" target="_blank" class="social-btn"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="https://github.com/Rita190807" target="_blank" class="social-btn"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="CV-ADJ.pdf" download class="cv-social-btn" title="Descargar CV">
+                            <i class="fas fa-file-alt fa-lg"></i>
                             <span class="cv-tooltip">Descargar CV</span>
                         </a>
                     </div>
@@ -157,7 +309,7 @@
                 <div class="hero-img-pro">
                     <div class="img-glass-bg"></div>
                     <div class="img-gradient-border">
-                        <img src="./largo.jpg" alt="profile image" class="hero-profile-img">
+                        <img src="largo.jpg" alt="profile image" class="hero-profile-img" loading="eager">
                     </div>
                 </div>
             </div>
@@ -321,6 +473,12 @@
                     </div>
                     <button type="submit" class="contact-btn ripple">Enviar</button>
                 </form>
+            </div>
+            <div class="email-copy-bar">
+                <button class="copy-btn" onclick="copyEmail()">
+                    <i class="fas fa-envelope"></i>
+                    <span class="copy-label">Copiar mi email</span>
+                </button>
             </div>
         </section>
 
