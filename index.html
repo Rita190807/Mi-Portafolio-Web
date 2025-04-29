@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/19f80c203e.js" crossorigin="anonymous"></script>
+    <style>
+        .theme-toggle-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2196f3 60%, #7e6b8f 100%);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+        .theme-toggle-btn i {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        body.light-mode {
+            background: #fff !important;
+            color: #232b3a !important;
+        }
+        body.light-mode .section-title,
+        body.light-mode .skills-category h3,
+        body.light-mode .stat-number {
+            color: #2196f3 !important;
+        }
+        body.light-mode .skills-section,
+        body.light-mode .projects-section,
+        body.light-mode .contact-section,
+        body.light-mode header,
+        body.light-mode #navbar {
+            background: #fff !important;
+        }
+        body.light-mode .skill-card,
+        body.light-mode .project-card,
+        body.light-mode .contact-container {
+            background: #f5f7fa !important;
+            color: #232b3a !important;
+            border: 1px solid #cfd8dc !important;
+            box-shadow: 0 4px 24px 0 rgba(33,150,243,0.06);
+        }
+        body.light-mode .skill-card h4,
+        body.light-mode .project-content h3,
+        body.light-mode .contact-info h3 {
+            color: #2196f3 !important;
+        }
+        body.light-mode .nav-links a {
+            color: #232b3a !important;
+        }
+        body.light-mode .nav-links a::after {
+            background: #2196f3 !important;
+        }
+        body.light-mode .logo,
+        body.light-mode .logo span {
+            color: #2196f3 !important;
+        }
+        body.light-mode .footer-content,
+        body.light-mode .footer-content p {
+            color: #232b3a !important;
+        }
+        body.light-mode .social-links a,
+        body.light-mode .social-links a i {
+            color: #2196f3 !important;
+        }
+        body.light-mode .cv-social-btn {
+            background: linear-gradient(135deg, #2196f3 60%, #7e6b8f 100%);
+            color: #fff;
+        }
+        body.light-mode .cv-social-btn:hover {
+            background: linear-gradient(135deg, #1e90ff 60%, #4a6fa5 100%);
+            color: #fff;
+        }
+        body.light-mode .theme-toggle-btn {
+            background: linear-gradient(135deg, #2196f3 60%, #7e6b8f 100%);
+        }
+        body.light-mode .theme-toggle-btn i {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar tema">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if(document.body.classList.contains('light-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+    </script>
+    <header>
+        <nav id="navbar">
+            <div class="container nav-container">
+                <div class="logo rain-logo">Rita<span>Santoandre
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                </span></div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>  
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="welcome-text">¡Hola! 👋 Soy</span>
+                    <h2 class="typewriter">Desarrolladora Web Junior</h2>
+                    <p class="hero-description">"Construyendo una base sólida, una línea de código a la vez, mientras exploro nuevas tecnologías y habilidades para perfeccionar mi dominio técnico."</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/rita-vanessa-santoandre-913b871ab/" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Rita190807" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+                        <a href="CV-ADJ" download class="cv-social-btn" title="Descargar CV">
+                            <i class="fas fa-file-alt"></i>
+                            <span class="cv-tooltip">Descargar CV</span>
+                        </a>
+                    </div>
+                    <a href="about.html" class="about-btn-hero">Sobre mí</a>
+                </div>
+                <div class="hero-img-pro">
+                    <div class="img-glass-bg"></div>
+                    <div class="img-gradient-border">
+                        <img src="./largo.jpg" alt="profile image" class="hero-profile-img">
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-mouse"></i>
+                <span class="scroll-arrow"><i class="fas fa-chevron-down"></i></span>
+            </div>
+        </section>
+        
+        <section id="habilidades" class="skills-section">
+            <h2 class="section-title">Mis Habilidades</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Front-End</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fab fa-html5"></i>
+                            <h4>HTML5</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-css3-alt"></i>
+                            <h4>CSS3</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-js"></i>
+                            <h4>JavaScript</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-react"></i>
+                            <h4>React</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Lenguajes de Programación</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fab fa-python"></i>
+                            <h4>Python</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-code"></i>
+                            <h4>C</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Herramientas</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fab fa-git-alt"></i>
+                            <h4>Git</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-github"></i>
+                            <h4>GitHub</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-pencil-ruler"></i>
+                            <h4>UI/UX</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Responsive Design</h4>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-section">
+            <h2 class="section-title">Experiencia y Proyectos</h2>
+            <div class="experience-cards">
+                <div class="experience-card">
+                    <h3>Mi Portafolio Web</h3>
+                    <p>Este portafolio es un proyecto personal donde aplico mis conocimientos en desarrollo web, diseño moderno y buenas prácticas. Aquí muestro mis habilidades, herramientas y proyectos destacados.</p>
+                </div>
+                <div class="experience-card">
+                    <h3>Página para Cliente-Empresa</h3>
+                    <p>Actualmente estoy desarrollando una página web profesional dirigida a un cliente-empresa del rubro de seguridad privada, enfocada en soluciones a medida, experiencia de usuario y optimización para negocios.</p>
+                </div>
+                <div class="experience-card">
+                    <h3>Mini Proyectos y Aprendizaje Continuo</h3>
+                    <p>Realizo mini proyectos para mejorar mis habilidades y explorar nuevas tecnologías. Siempre estoy dispuesta a capacitarme y mantenerme actualizada con las novedades del mundo de la programación.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="projects-section">
+            <h2 class="section-title">Herramientas</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="display: flex; align-items: center; justify-content: flex-start; background: rgba(33,150,243,0.08); height: 200px; padding-left: 2rem; gap: 2.5rem;">
+                        <div style="display: flex; align-items: center;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code Logo" style="height: 60px; width: 60px; margin-right: 1rem;">
+                            <span style="font-size: 1.5rem; color: #2196f3; font-weight: 700; letter-spacing: 1px;">Visual Studio Code</span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo" style="height: 60px; width: 60px; margin-right: 1rem;">
+                            <span style="font-size: 1.5rem; color: #f7df1e; font-weight: 700; letter-spacing: 1px; text-shadow: 1px 1px 2px #232b3a;">JavaScript / JS</span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS Logo" style="height: 60px; width: 60px; margin-right: 1rem;">
+                            <span style="font-size: 1.5rem; color: #2196f3; font-weight: 700; letter-spacing: 1px;">CSS</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                    </div>
+                </div>
+                <!-- Puedes agregar más tarjetas de herramientas aquí si lo deseas -->
+            </div>
+        </section>
+
+        <section class="contact-section" id="contacto">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-container">
+                <form class="contact-form animated-form" action="https://formspree.io/f/meogeajb" method="POST">
+                    <div class="input-icon-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="input-icon-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Tu email" required>
+                    </div>
+                    <div class="input-icon-group">
+                        <i class="fas fa-comment-dots"></i>
+                        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="contact-btn ripple">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy;2025 Rita Santoandre -Todos los derechos reservados</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/rita-vanessa-santoandre-913b871ab" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Rita190807" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+    <a href="index.html" class="back-to-home" title="Volver al inicio">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí - Rita Santoandre</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/19f80c203e.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: linear-gradient(120deg, #181c24 0%, #232b3a 100%);
+            color: #f7fafc;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        .at-hero {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 5rem 3rem 2rem 6rem;
+            background: linear-gradient(120deg, rgba(33,150,243,0.12) 0%, rgba(126,107,143,0.10) 100%);
+            position: relative;
+        }
+        .at-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #2196f3 60%, #7e6b8f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        .at-hero h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+        .at-hero p {
+            font-size: 1.15rem;
+            color: #bfc9d1;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        .about-section {
+            padding: 3rem 2rem 2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about-title {
+            font-size: 2rem;
+            color: #2196f3;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        .about-cards {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .about-card {
+            background: rgba(33, 150, 243, 0.08);
+            border: 1px solid rgba(33,150,243,0.15);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            min-width: 260px;
+            max-width: 340px;
+            color: #fff;
+            box-shadow: 0 4px 24px 0 rgba(33,150,243,0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 2rem;
+        }
+        .about-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #2196f3;
+        }
+        .about-card p {
+            color: #bfc9d1;
+            font-size: 1.05rem;
+        }
+        .about-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px 0 rgba(33,150,243,0.18);
+        }
+        @media (max-width: 900px) {
+            .at-hero {
+                padding: 3rem 1.5rem 1rem 1.5rem;
+                align-items: center;
+                text-align: center;
+            }
+            .about-section {
+                padding: 2rem 1rem 1rem 1rem;
+            }
+            .about-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .theme-toggle-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2196f3 60%, #7e6b8f 100%);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+        .theme-toggle-btn i {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        body.light-mode {
+            background: #fff !important;
+            color: #232b3a !important;
+        }
+        body.light-mode .at-hero,
+        body.light-mode .about-section {
+            background: #fff !important;
+        }
+        body.light-mode .about-card {
+            background: #f5f7fa !important;
+            color: #232b3a !important;
+            border: 1px solid #cfd8dc !important;
+            box-shadow: 0 4px 24px 0 rgba(33,150,243,0.06);
+        }
+        body.light-mode .about-title {
+            background: none !important;
+            color: #2196f3 !important;
+        }
+        body.light-mode .about-card h3 {
+            color: #2196f3 !important;
+        }
+        body.light-mode .octagon-photo-outer::before {
+            background: conic-gradient(
+                #2196f3 0%,
+                #7e6b8f 40%,
+                #2196f3 80%,
+                #7e6b8f 100%
+            );
+            filter: blur(6px) brightness(1.1);
+            opacity: 0.6;
+        }
+        body.light-mode .octagon-photo {
+            border: 4px solid #2196f3;
+            background: #fff;
+            box-shadow: 0 4px 16px 0 rgba(33,150,243,0.10);
+        }
+        body.light-mode .theme-toggle-btn {
+            background: linear-gradient(135deg, #2196f3 60%, #7e6b8f 100%);
+        }
+        body.light-mode .theme-toggle-btn i {
+            color: #fff;
+        }
+        body.light-mode .cv-social-btn {
+            background: linear-gradient(135deg, #2196f3 60%, #7e6b8f 100%);
+            color: #fff;
+        }
+        body.light-mode .cv-social-btn:hover {
+            background: linear-gradient(135deg, #1e90ff 60%, #4a6fa5 100%);
+            color: #fff;
+        }
+        body.light-mode .social-btn i {
+            color: #2196f3 !important;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle-btn" id="themeToggle" title="Cambiar tema">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if(document.body.classList.contains('light-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+    </script>
+    <div class="at-hero" style="display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;">
+        <div class="octagon-photo-outer">
+            <div class="octagon-photo-container">
+                <img src="perf.jpg" alt="Foto de perfil" class="octagon-photo">
+            </div>
+        </div>
+        <div>
+            <h1 class="shine-name">Rita Santoandre
+                <span class="drop drop1"></span>
+                <span class="drop drop2"></span>
+                <span class="drop drop3"></span>
+                <span class="drop drop4"></span>
+                <span class="drop drop5"></span>
+            </h1>
+            <p>Soy argentina, nacida en Santiago del Estero, Mailín, y actualmente resido en Buenos Aires. Antes de la programación, me destacaba por mi curiosidad, creatividad y pasión por aprender, especialmente en la reparación de celulares. Disfruto de la lectura, el arte y el trabajo en equipo, valores que hoy forman parte de mi identidad profesional.</p>
+        </div>
+    </div>
+    <section class="about-section">
+        <div class="about-title">Experiencia Laboral</div>
+        <div class="about-cards">
+            <div class="about-card">
+                <h3>Seguridad Privada</h3>
+                <p>Experiencia en el sector de Seguridad Privada, desempeñando funciones clave como Atención al Público, Recepción, Control de Acceso, Acreditación y Monitoreo. He trabajado en diversos entornos, incluyendo Centros Culturales, Policlínicos, Predios Abiertos e Institutos, donde desarrollé habilidades de gestión, resolución de conflictos, trabajo en equipo y cumplimiento de protocolos de seguridad. Esta experiencia fortaleció mi capacidad de adaptación, responsabilidad y atención al detalle en contextos dinámicos y de alta exigencia.</p>
+            </div>
+            <div class="about-card">
+                <h3>Desarrolladora Web</h3>
+                <p>Este portafolio representa mi incursión práctica en el desarrollo web, donde apliqué y consolidé habilidades técnicas como HTML, CSS, JavaScript y diseño UI/UX. La experiencia adquirida en la creación de este sitio me motivó a plantearme nuevos desafíos, como el desarrollo de soluciones web orientadas a negocios reales. Actualmente, estoy trabajando en un proyecto solicitado por una empresa del rubro de Seguridad Privada, donde aplico metodologías ágiles, buenas prácticas de programación y un enfoque centrado en la experiencia del usuario.</p>
+            </div>
+        </div>
+        <div class="about-title">Certificados</div>
+        <div class="about-cards">
+            <div class="about-card" style="min-width: 320px; max-width: 600px;">
+                <h3>Certificados Obtenidos</h3>
+                <ul style="color: #bfc9d1; font-size: 1.05rem; padding-left: 1.2em;">
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>Introducción a los Algoritmos y Programación</li>
+                    <li>HTML5 y CSS3</li>
+                    <li>Ciberseguridad</li>
+                    <li>Introducción a Git y GitHub</li>
+                    <li>Introducción a Bases de Datos Relacionales (MySQL)</li>
+                    <li>Transformación Digital</li>
+                    <li>Inteligencia Artificial Generativa y Copilot</li>
+                    <li>Excel</li>
+                    <li>Operador de Cámaras de Videovigilancia <span style="color:#2196f3;">(en curso)</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
