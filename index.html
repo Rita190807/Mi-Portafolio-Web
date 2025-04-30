@@ -152,7 +152,7 @@
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/rita-vanessa-santoandre-913b871ab/" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/Rita190807" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
-                        <a href="CV-ADJ" download class="cv-social-btn" title="Descargar CV">
+                        <a href="./CV-ADJ.pdf" download="CV-Rita-Santoandre.pdf" class="cv-social-btn" title="Descargar CV">
                             <i class="fas fa-file-alt"></i>
                             <span class="cv-tooltip">Descargar CV</span>
                         </a>
@@ -312,6 +312,9 @@
             <h2 class="section-title">Contacto</h2>
             <div class="contact-container">
                 <form class="contact-form animated-form" action="https://formspree.io/f/meogeajb" method="POST">
+                    <input type="hidden" name="_subject" value="Nuevo mensaje de contacto desde tu portafolio">
+                    <input type="hidden" name="_next" value="https://rita190807.github.io/gracias.html">
+                    <input type="hidden" name="_autoresponse" value="Gracias por contactarme. He recibido tu mensaje y te responderé pronto.">
                     <div class="input-icon-group">
                         <i class="fas fa-user"></i>
                         <input type="text" name="nombre" placeholder="Tu nombre" required>
@@ -324,7 +327,9 @@
                         <i class="fas fa-comment-dots"></i>
                         <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
                     </div>
-                    <button type="submit" class="contact-btn ripple">Enviar</button>
+                    <button type="submit" class="contact-btn ripple">
+                        <i class="fas fa-paper-plane"></i> Enviar mensaje
+                    </button>
                 </form>
             </div>
         </section>

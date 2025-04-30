@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu mensaje!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/19f80c203e.js" crossorigin="anonymous"></script>
+    <style>
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .thank-you-icon {
+            font-size: 4rem;
+            color: #2196f3;
+            margin-bottom: 2rem;
+            animation: bounce 1s infinite;
+        }
+        
+        .thank-you-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .thank-you-message {
+            font-size: 1.2rem;
+            color: #bfc9d1;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.15) 0%, rgba(126, 107, 143, 0.15) 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-home-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.25) 0%, rgba(126, 107, 143, 0.25) 100%);
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <i class="fas fa-check-circle thank-you-icon"></i>
+        <h1 class="thank-you-title">¡Gracias por tu mensaje!</h1>
+        <p class="thank-you-message">He recibido tu mensaje y te responderé lo antes posible. Mientras tanto, puedes volver a la página principal.</p>
+        <a href="index.html" class="back-home-btn">
+            <i class="fas fa-home"></i>
+            Volver al inicio
+        </a>
+    </div>
+</body>
+</html> 
