@@ -103,14 +103,37 @@
     <script>
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
+        
+        // Verificar si hay un tema guardado en localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.classList.add(savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');
-            if(document.body.classList.contains('light-mode')) {
+            const currentTheme = document.body.classList.contains('light-mode') ? 'light-mode' : '';
+            localStorage.setItem('theme', currentTheme);
+            updateThemeIcon(currentTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'light-mode') {
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
             } else {
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Asegurar que el tema se aplique correctamente al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.classList.add(savedTheme);
+                updateThemeIcon(savedTheme);
             }
         });
     </script>
@@ -331,7 +354,7 @@
     </main>
 
     <footer>
-        <div class="footer-content">
+        <div class="footer-content">|
             <p>&copy;2025 Rita Santoandre -Todos los derechos reservados</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/rita-vanessa-santoandre-913b871ab" target="_blank"><i class="fab fa-linkedin"></i></a>
