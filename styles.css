@@ -76,7 +76,7 @@ body::before {
     bottom: 0;
     background: linear-gradient(
         135deg,
-        rgba(125, 196, 228, 0.02) 0%,
+        rgba(2, 64, 93, 0.855) 0%,
         rgba(157, 214, 233, 0.02) 100%
     );
     pointer-events: none;
